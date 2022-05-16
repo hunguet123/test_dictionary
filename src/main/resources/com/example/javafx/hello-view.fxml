@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-image: url(&quot; https://i.pinimg.com/736x/2f/60/6a/2f606ad14bf9171e5f41b42a01b4441f.jpg&quot; );" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.HelloController">
+    <children>
+        <AnchorPane fx:id="content" layoutX="300.0" layoutY="50.0" prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px;" styleClass="bgControl" AnchorPane.bottomAnchor="59.0" AnchorPane.topAnchor="59.0">
+            <children>
+                <AnchorPane fx:id="contentSearch" layoutX="-2.0" prefHeight="682.0" prefWidth="966.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: true;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="50.0" prefWidth="600.0" style="visibility: true;">
+                            <children>
+                                <TextField fx:id="inputSearch" prefWidth="490.0" promptText="Nhập từ cần tìm" style="-fx-font-size: 16px; -fx-font-weight: 600;">
+                                    <padding>
+                                        <Insets bottom="12.0" left="10.0" right="30.0" top="12.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="19.0" />
+                                    </font>
+                                </TextField>
+                                <AnchorPane fx:id="submitSearch" layoutX="410.0" layoutY="4.5" prefHeight="40.0" prefWidth="75.0" style="-fx-background-color: #999; -fx-background-radius: 2px; -fx-cursor: CLOSED_HAND;">
+                                    <children>
+                                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/sreachButton.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="contentNote" prefHeight="682.0" prefWidth="958.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="contentAdd" layoutY="216.0" prefHeight="589.0" prefWidth="300.0" style="visibility: false;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+                     <children>
+                        <TextField fx:id="inputEnglish" layoutY="28.0" prefHeight="30.0" prefWidth="307.0" promptText="Nhập từ tiếng Anh" style="-fx-background-image: #00FFFF;" AnchorPane.bottomAnchor="424.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="28.0" />
+                        <TextField fx:id="inputViet" layoutY="106.0" prefHeight="30.0" prefWidth="307.0" promptText="Nhập từ tiếng Việt" style="-fx-background-image: #00FFFF;" AnchorPane.bottomAnchor="346.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="106.0" />
+                        <Button mnemonicParsing="false" onAction="#add" prefHeight="63.0" prefWidth="91.0" text="Button" AnchorPane.bottomAnchor="379.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="40.0">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/addbutton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Button alignment="CENTER" layoutX="28.0" layoutY="50.0" minHeight="0.0" mnemonicParsing="false" onAction="#anchorAdd" prefHeight="62.0" prefWidth="100.0" style="-fx-background-radius: 50px;" text="Thêm" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="842.0" AnchorPane.topAnchor="50.0">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="143.0" layoutY="50.0" mnemonicParsing="false" onAction="#anchorDelete" prefHeight="42.0" prefWidth="98.0" style="-fx-background-radius: 50px;" text="Xóa" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="143.0" AnchorPane.rightAnchor="727.0" AnchorPane.topAnchor="50.0">
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <AnchorPane fx:id="contentDelete" layoutY="644.0" prefHeight="530.0" prefWidth="718.0" style="visibility: false;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+                     <children>
+                        <TextField fx:id="inputWord" layoutY="14.0" prefHeight="31.0" prefWidth="274.0" promptText="Nhập từ muốn xóa" style="-fx-background-image: #00FFFF;" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="681.0" AnchorPane.topAnchor="28.0" />
+                        <Button layoutX="325.0" layoutY="42.0" mnemonicParsing="false" onAction="#delete" prefHeight="34.0" prefWidth="54.0" text="Xóa" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="575.0" AnchorPane.topAnchor="28.0">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/deletebuton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <ListView fx:id="suggestDelete" layoutX="20.0" layoutY="67.0" onMouseClicked="#itemSuggestDelete" prefHeight="200.0" prefWidth="267.0" />
+                     </children>
+                  </AnchorPane>
+                  <Button layoutX="357.0" layoutY="50.0" mnemonicParsing="false" onAction="#showAll" prefHeight="42.0" prefWidth="85.0" style="-fx-background-radius: 50px;" text="Show All" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="526.0" AnchorPane.topAnchor="50.0" />
+                  <ListView fx:id="viewAll" layoutX="527.0" layoutY="14.0" onMouseClicked="#itemShow" prefHeight="638.0" prefWidth="406.0" style="-fx-border-radius: 50px; -fx-background-color: #8B008B;" />
+                  <Button layoutX="266.0" layoutY="49.0" mnemonicParsing="false" onAction="#anchorFix" prefHeight="40.0" prefWidth="54.0" style="-fx-background-radius: 50px;" text="Sửa" />
+                  <AnchorPane fx:id="contentFix" layoutX="7.0" layoutY="151.0" prefHeight="530.0" prefWidth="454.0" style="visibility: false;">
+                     <children>
+                        <TextField fx:id="inputWordFix" layoutY="14.0" prefHeight="35.0" prefWidth="248.0" promptText="Nhập từ muốn sửa" style="-fx-background-image: #00FFFF;" AnchorPane.bottomAnchor="467.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="186.0" AnchorPane.topAnchor="28.0" />
+                        <ListView fx:id="suggestFix" layoutX="20.0" layoutY="67.0" onMouseClicked="#itemSuggestFix" prefHeight="200.0" prefWidth="253.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+                </AnchorPane>
+                <AnchorPane fx:id="contentGame" layoutX="50.0" layoutY="50.0" prefHeight="850.0" prefWidth="600.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0" />
+                <AnchorPane fx:id="contentSetting" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button layoutX="582.0" layoutY="64.0" mnemonicParsing="false" onAction="#Search" prefHeight="30.0" prefWidth="64.0" text="Search" />
+                  <TextField fx:id="input" layoutX="174.0" layoutY="66.0" prefHeight="26.0" prefWidth="351.0" promptText="Nhập từ" />
+                  <TextArea fx:id="output" layoutX="183.0" layoutY="181.0" prefHeight="410.0" prefWidth="546.0" />
+                  <ImageView fx:id="nodata" fitHeight="434.0" fitWidth="565.0" layoutX="174.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" style="visibility: true;" AnchorPane.bottomAnchor="77.25" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="228.60000000000002" AnchorPane.topAnchor="181.0">
+                     <image>
+                        <Image url="@img/noData.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="805.0" layoutY="56.0" mnemonicParsing="false" onAction="#convert">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/convert.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fx:id="America" fitHeight="50.0" fitWidth="50.0" layoutX="739.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" style="visibility: true;" AnchorPane.leftAnchor="739.0" AnchorPane.topAnchor="54.0">
+                     <image>
+                        <Image url="@img/America.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="VietNam" fitHeight="50.0" fitWidth="68.0" layoutX="877.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="877.0" AnchorPane.topAnchor="54.0">
+                     <image>
+                        <Image url="@img/VietNam.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="America1" fitHeight="50.0" fitWidth="50.0" layoutX="877.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" style="visibility: false;">
+                     <image>
+                        <Image url="@img/America.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="VietNam1" fitHeight="50.0" fitWidth="68.0" layoutX="721.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" style="visibility: false;">
+                     <image>
+                        <Image url="@img/VietNam.png" />
+                     </image>
+                  </ImageView>
+                  <ListView fx:id="suggest" layoutX="174.0" layoutY="95.0" onMouseClicked="#itemSuggest" prefHeight="200.0" prefWidth="351.0" />
+                    </children>
+                </AnchorPane>
+            </children></AnchorPane>
+        <AnchorPane fx:id="control" layoutX="50.0" layoutY="50.0" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #999; -fx-background-radius: 50px;">
+            <children>
+                <HBox fx:id="bgSearch" layoutX="50.0" layoutY="50.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px; -fx-background-color: #666;">
+                    <children>
+                        <ImageView fx:id="buttonSearch" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                            <image>
+                                <Image url="@img/search.png" />
+                            </image>
+                        </ImageView>
+                    </children></HBox>
+                <HBox fx:id="bgNote" layoutX="50.0" layoutY="216.67" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px; -fx-background-color: transparent;">
+                    <children>
+                        <ImageView fx:id="buttonNote" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                            <image>
+                                <Image url="@img/note.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <HBox fx:id="bgGame" layoutX="50.0" layoutY="383.3" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px; -fx-background-color: transparent;">
+                    <children>
+                        <ImageView fx:id="buttonGame" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                            <image>
+                                <Image url="@img/52761-video-game-icon.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <HBox fx:id="bgSetting" layoutX="50.0" layoutY="550.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px; -fx-background-color: transparent;">
+                    <children>
+                        <ImageView fx:id="buttonSetting" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                            <image>
+                                <Image url="@img/sreachButton.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
